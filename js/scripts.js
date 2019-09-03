@@ -1162,7 +1162,8 @@ Function Contact Formular
 					$.post(action, {
 						name: $('#name').val(),
 						email: $('#email').val(),
-						comments: $('#comments').val()
+						comments: $('#comments').val(),
+						phone: $('#phone').val()
 					},
 					function(data){
 						document.getElementById('message').innerHTML = data;
