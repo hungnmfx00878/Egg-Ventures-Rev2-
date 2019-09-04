@@ -36,10 +36,16 @@ if(trim($name) == '') {
 } else if(trim($email) == '') {
 	echo '<div class="error_message">Attention! Please enter a valid email address.</div>';
 	exit();
+} else if(trim($phone) == '') {
+	echo '<div class="error_message">Attention! Please enter a valid phone number.</div>';
+	exit();
+} else if(!is_numeric($phone)) {
+	echo '<div class="error_message">Attention! Phone number can only contain digits.</div>';
+	exit();
 } else if(!isEmail($email)) {
 	echo '<div class="error_message">Attention! You have enter an invalid e-mail address, try again.</div>';
 	exit();
-}else if(trim($comments) == '') {
+} else if(trim($comments) == '') {
 	echo '<div class="error_message">Attention! Please enter your message.</div>';
 	exit();
 } 
@@ -71,7 +77,7 @@ $e_subject = 'You\'ve been contacted by ' . $name . '.';
 
 $e_body = "You have been contacted by $name, their additional message is as follows." . PHP_EOL . PHP_EOL;
 $e_content = "\"$comments\"" . PHP_EOL . PHP_EOL;
-$e_reply = "You can contact $name via email, $email or via phone, $phone";
+$e_reply = "You can contact $name via email, $email or via phone $phone";
 
 $msg = wordwrap( $e_body . $e_content . $e_reply, 70 );
 
