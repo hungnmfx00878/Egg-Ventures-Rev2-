@@ -39,9 +39,6 @@ if(trim($name) == '') {
 } else if(trim($phone) == '') {
 	echo '<div class="error_message">Attention! Please enter a valid phone number.</div>';
 	exit();
-} else if(!is_numeric($phone)) {
-	echo '<div class="error_message">Attention! Phone number can only contain digits.</div>';
-	exit();
 } else if(!isEmail($email)) {
 	echo '<div class="error_message">Attention! You have enter an invalid e-mail address, try again.</div>';
 	exit();
